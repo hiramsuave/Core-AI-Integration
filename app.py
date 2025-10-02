@@ -97,6 +97,7 @@ st.sidebar.info(
 )
 
 st.title("🤖 Core AI Integration")
+st.sidebar.markdown("**Developer:** Hiram Quezada")
 
 option = st.sidebar.selectbox("Choose functionality:", ["PDF Q&A", "Customer Support Chatbot"])
 
@@ -146,3 +147,7 @@ elif option == "Customer Support Chatbot":
         for msg in st.session_state.conversation_history:
             role = "You" if msg["role"] == "user" else "Bot"
             st.write(f"**{role}:** {msg['content']}")
+
+st.markdown("---")
+st.markdown("© 2025 Hiram Quezada")
+

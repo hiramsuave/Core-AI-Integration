@@ -1,19 +1,13 @@
-import os
-from dotenv import load_dotenv
+import streamlit as st
 from openai import OpenAI
 import PyPDF2
 import numpy as np
 import faiss
-import streamlit as st
 
 # -------------------------------
-# Load API key
+# Load API key from Streamlit secrets
 # -------------------------------
-load_dotenv("ai-week1.env")
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise ValueError("OPENAI_API_KEY not found in environment")
-
+api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
 # -------------------------------
